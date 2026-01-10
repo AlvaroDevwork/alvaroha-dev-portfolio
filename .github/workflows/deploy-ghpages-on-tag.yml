@@ -1,0 +1,30 @@
+name: Deploy to GitHub Pages on Tag
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'  # Only activated with tags such as v0.1.1, v1.0.0, etc.
+
+permissions:
+  contents: write  # Requested by peaceiris/actions-gh-pages
+
+jobs:
+  deploy:
+    name: Deploy static site
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js (requerido por GitHub Pages Action en algunos entornos)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .  # Root directory of the site (HTML, CSS, JS)
+          publish_branch: gh-pages
