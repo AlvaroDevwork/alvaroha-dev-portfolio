@@ -151,46 +151,164 @@ JavaScript usage is intentionally **minimal and focused**.
 
 This is a **pure static web project**.
 
-### Run locally
+# Alvaro Huenuqueo — Professional Web Portfolio
+
+**Version:** `v0.2.0`  
+**Phase:** HTML, CSS & JavaScript Integration
+
+---
+
+## 🚀 Overview
+
+This release transforms the initial static foundation (`v0.1.0`) into a styled, responsive, and interactive portfolio. Built with a clean architecture, the codebase reflects real software engineering practices:
+
+- **Semantic HTML5**
+- **Modular CSS** (scalable, mobile-first, media queries)
+- **JavaScript** (hamburger menu interaction)
+- **Strict GitFlow**, **Conventional Commits**, and **Pull Requests**
+
+---
+
+## ✅ Scope — What’s Included
+
+- Desktop & mobile navigation  
+- Responsive layout and section alignment  
+- Reusable UI components (buttons, icons)  
+- Clean class naming & structural consistency  
+- GitHub Pages deployment (auto via GitHub Actions)
+
+---
+
+## 🚧 Not Included Yet
+
+- Advanced JS logic or animations  
+- API/backend integration  
+- Frontend frameworks (React, Vue, etc.)
+
+---
+
+## 🧪 GitFlow Development Workflow
+
+| Branch         | Purpose                                 |
+|----------------|-----------------------------------------|
+| `main`         | Stable, tagged releases only            |
+| `develop`      | Active integration branch               |
+| `feature/*`    | New sections or functionality           |
+| `fix/*`        | Syntax/structure/style corrections      |
+| `release/*`    | Version stabilization (optional)        |
+| `tags`         | Production-ready version snapshots      |
+
+All changes are integrated into `develop` through Pull Requests.
+
+---
+
+## 🧱 Construction History (Commits Summary)
+
+### 🔹 HTML Foundation (`v0.1.0`)
+
+- `feat(html-head)` – Base structure & meta  
+- `feat(navbar-desktop)` – Navigation bar  
+- `feat(about)` → `contact` → `footer` – All sections built semantically  
+- `feat(profile)` – Hero/profile section
+
+### 🔹 CSS Integration (`v0.2.0`)
+
+- `style(css)` – Fonts, resets, transitions  
+- `feat(css-navbar)`, `css-profile`, `css-components`  
+- `feat(css-sections)` – All section styles  
+- `feat(css-mediaqueries)` – Responsive design  
+- `fix(css-naming)` – Class consistency
+
+### 🔹 JavaScript
+
+- `feat(js-menu)` – Hamburger toggle logic
+
+### 🛠️ Fixes
+
+- `fix(html-python-title)` – Typo corrections  
+- `fix(html)` – Markup cleanup and alignment
+
+---
+
+## 🧩 Section Reference
+
+| Section ID          | Purpose                    |
+|---------------------|----------------------------|
+| `#desktop-nav`       | Desktop navigation         |
+| `#hamburger-nav`     | Mobile menu navigation     |
+| `#profile`           | Hero/introduction section  |
+| `#about`             | Personal info              |
+| `#experience`        | Skills & experience        |
+| `#projects`          | Project showcase           |
+| `#contact`           | Contact info               |
+| `footer`             | Bottom nav + legal         |
+
+---
+
+## 🎨 CSS Architecture
+
+- **`style.css`**: Base styles, layout, components  
+- **`mediaqueries.css`**: Breakpoints for responsiveness  
+- **Design Focus**: Mobile-first, reusable classes, layout alignment
+
+---
+
+## 🧠 JavaScript Strategy
+
+Minimalist approach:
+
+- **`script.js`**: Only for hamburger toggle  
+- No external libraries or frameworks  
+- Clean separation of concerns
+
+---
+
+## 💻 Local Usage
+
+This is a **pure static project**. No build tools required.
 
 ```bash
 git clone https://github.com/AlvaroHuenuqueoArias/alvaroha-dev-portfolio-official.git
 cd alvaroha-dev-portfolio-official
 open index.html
+```
+
+> No dependencies or package managers needed.
+
 ---
 
-No build tools, package managers, or external dependencies are required.
+## 🚀 Deployment
 
----
+Deployment is fully automated via **GitHub Actions** and hosted on **GitHub Pages**.
 
-## Deployment
+### 🔁 Trigger
 
-Deployment is handled via **GitHub Pages** using a **GitHub Actions workflow**.
-
-### Trigger
-
-The site is automatically deployed when a version tag is pushed:
+Deployment occurs automatically when a new tag is pushed:
 
 ```text
 vX.Y.Z
+```
+
+Each version tag = production-ready snapshot.
 
 ---
 
-## Versioning Strategy
+## 📌 Versioning Strategy
 
-The project follows **Semantic Versioning**, aligned with development phases:
+Semantic Versioning aligned with development stages:
 
-- `v0.1.0` → HTML-only foundation  
-- `v0.2.0` → HTML + CSS + JavaScript integration *(current release)*  
-- `v0.3.0` *(planned)* → Enhancements, animations, and optional improvements  
+- `v0.1.0` → HTML-only base  
+- `v0.2.0` → Full integration of HTML + CSS + JS *(current)*  
+- `v0.3.0` *(planned)* → Animations, enhancements & JS logic
 
-Each version is closed with a **Git tag** and deployed automatically.
+Each version is deployed via Git tag.
 
 ---
 
-## Contact
+## 📇 Contact
 
-**Alvaro Huenuqueo**
+**Alvaro Huenuqueo**  
+📩 [alvarohuenuqueoarias@hotmail.com](mailto:alvarohuenuqueoarias@hotmail.com)  
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/alvaroalejandro-huenuqueoarias/)
 
-- LinkedIn: <https://www.linkedin.com/in/alvaroalejandro-huenuqueoarias/>  
-- Email: <alvarohuenuqueoarias@hotmail.com>
+---
