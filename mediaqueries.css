@@ -1,106 +1,46 @@
-@media screen and (max-width: 1400px) {
-    #profile {
-        height: 83vh;
-        margin-bottom: 6rem;
-    }
-
-    .about-containers {
-        flex-wrap: wrap;
-
-    }
-    #contact,
-    #projects {
-        height: fit-content;
-    }
+/* Responsive overrides; component defaults live in style.css. */
+@media (min-width: 40rem) {
+    .container { width: min(calc(100% - 4rem), var(--container)); }
+    .hero__portrait { width: 19rem; }
+    .focus-grid, .workflow, .project__details { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-@media screen and (max-width: 1200px) {
-    #desktop-nav {
-        display: none;
-
-    }
-    #hamburger-nav {
-        display: flex;
-    }
-    #experience,
-    .experience-details-container {
-        margin-top: 2rem;
-    }
-    #profile,
-    .section-container {
+@media (min-width: 48rem) {
+    #about {
+        min-height: 0;
         display: block;
+        padding-block: clamp(4rem, 4vw, 4.5rem);
     }
-    .arrow {
-        display: none;
-    }
-    section,
-    .section-container {
-        height: fit-content;
-    }
-    section {
-        margin: 0 5%;
-    }
-    .section__pic-container {
-        width: 275px;
-        height: 275px;
-        margin: 0 auto 2rem;
-    }
-    .about-containers {
-        margin-top: 0;
-    }
+    .nav-shell { flex-wrap: nowrap; }
+    .nav-ready .nav-toggle { display: none; }
+    .nav-menu, .nav-ready .nav-menu[data-open="false"] { display: block; width: auto; }
+    .nav-menu ul, .nav-ready .nav-menu ul { flex-direction: row; }
+    .hero__grid { grid-template-columns: minmax(0, 1fr) 17rem; gap: 2rem; }
+    .hero__portrait { width: 17rem; }
+    .hero__title { font-size: clamp(2.7rem, 5vw, 4.5rem); }
+    .journey { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+    .contact { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; align-items: center; }
+    .site-footer__inner { grid-template-columns: 1fr auto; align-items: end; }
+    .site-footer__meta { text-align: right; }
+    #work { min-height: calc(100svh - 4.3125rem); display: flex; align-items: center; }
+    #workflow { min-height: calc(100svh - 4.3125rem); display: flex; align-items: center; }
+    #work .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; align-items: stretch; }
+    #work .project + .project { border-top: 0; padding-top: 0; }
 }
 
-@media screen and (max-width: 600px) {
-    #contact,
-    footer {
-        height: 40vh;
+@media (min-width: 64rem) {
+    .hero__grid { grid-template-columns: minmax(0, 1.3fr) minmax(0, 22rem); gap: clamp(3rem, 6vw, 6rem); }
+    .hero__portrait { width: 100%; max-width: 22rem; }
+    .hero__title { white-space: nowrap; font-size: clamp(2.8rem, 4.5vw, 4rem); }
+    #focus .focus-card:nth-child(even) {
+        width: 100%;
     }
-    #profile {
-        height: 83vh;
-        margin-bottom: 0;
+    #focus .focus-card:nth-child(even) > :is(.focus-card__label, h3, .focus-card__summary, .focus-card__note) {
+        width: calc(100% - clamp(3rem, 6vw, 5rem));
+        max-width: 31rem;
+        margin-left: auto;
+        text-align: left;
     }
-    article {
-        font-size: 1rem;
-    }
-    footer nav {
-        height: fit-content;
-        margin-bottom: 2rem;
-    }
-    .about-containers,
-    .contact-info-upper-container,
-    .btn-container {
-        flex-wrap: wrap;
-    }
-    .contact-info-container {
-        margin: 0;
-    }
-    .contact-info-container p,
-    .nav-links li a {
-        font-size: 1rem;
-    }
-    .experience-sub-title {
-        font-size: 1.25rem;
-    }
-    .logo {
-        font-size: 1.5rem;
-    }
-    .nav-links {
-        flex-direction: column;
-        gap: 0.5rem;
-        text-align: center;
-    }
-    .section__pic-container {
-        width: auto;
-        height: 46vw;
-        justify-content: center;
-    }
-    .section__text__p2 {
-        font-size: 1.25rem;
-    }
-    .title {
-        font-size: 2rem;
-    }
-    .text-container {
-        text-align: justify;
-    }
+    #work .projects { gap: clamp(1.5rem, 3vw, 3rem); }
+    .workflow { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
