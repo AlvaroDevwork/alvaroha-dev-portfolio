@@ -1,362 +1,531 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Alvaro H. A. | Desarrollo de software y sistemas web con IA</title>
+
+    <meta
+        name="description"
+        content="Portafolio de Alvaro H. A., autodidacta en desarrollo de software, enfocado en Python, JavaScript, sistemas web y flujos de ingeniería asistidos por IA."
+    />
+
+    <meta name="theme-color" content="#f3f5f7" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23182722'/%3E%3Cpath d='M9 23L16 8l7 15M12 18h8' fill='none' stroke='%23f7f8f6' stroke-width='2'/%3E%3C/svg%3E" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
 </head>
+
 <body>
-    <nav id="desktop-nav">
-        <div class="logo">Alvaro H. A.</div>
-        <div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-    <nav id="hamburger-nav">
-        <div class="logo">Alvaro H. A.</div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-            </div>
-        </div>
-    </nav>
-    <section id="profile">
-        <div class="section__pic-container">
-            <img src="./assets/PerfilPortada.png" alt="Alvaro H. A. profile picture" />
-        </div>
-        <div class="section__text">
-            <p class="section__text__p1">Hello, I'm</p>
-            <h1 class="title">Alvaro H. A.</h1>
-            <p class="section__text__p2">Programming Analyst</p>
-            <div class="btn-container">
-                
-                <button class="btn btn-color-1" onclick="location.href='./#contact'">
-                    Contact Info
-                </button>
-            </div>
-            <div id="socials-container">
-                <img 
-                src="./assets/linkedin.png" 
-                alt="My LinkedIn Profile"
-                class="icon"
+    <a class="skip-link" href="#main-content">
+        Saltar al contenido principal
+    </a>
+
+    <header class="site-header">
+        <div class="container nav-shell">
+            <a class="brand" href="#top" aria-label="Volver al inicio">
+                <img
+                    class="brand__logo"
+                    src="./assets/logoportfolio.png"
+                    alt=""
+                    width="40"
+                    height="40"
+                    decoding="async"
                 />
-                <img 
-                src="./assets/github.png" 
-                alt="My GitHub Profile"
-                class="icon"
-                onclick="location.href='https://github.com/AlvaroDevwork'"
-                />
-            </div>
+            </a>
+
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="primary-navigation"
+                aria-label="Abrir navegación"
+            >
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav
+                id="primary-navigation"
+                class="nav-menu"
+                aria-label="Navegación principal"
+                data-open="false"
+            >
+                <ul>
+                    <li><a href="#about">Sobre mí</a></li>
+                    <li><a href="#focus">Tecnologías</a></li>
+                    <li><a href="#work">Proyectos</a></li>
+                    <li><a href="#workflow">Flujo de trabajo</a></li>
+                    <li>
+                        <a class="nav-menu__contact" href="#contact">
+                            Contacto
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-    </section>
-    <section id="about">
-    <p class="section__text__p1">Get To Know More</p>
-    <h1 class="title">About Me</h1>
-    <div class="section-container">
-        <div class="section__pic-container">
-            <img
-                src="./assets/AboutmePortfolio.png"
-                alt="Profile Picture"
-                class="about-pic"
-            />
-        </div>
-        <div class="about-details-container">
-            <div class="about-containers">
-                <div class="details-container">
-                    <img
-                        src="./assets/Experience2.png"
-                        alt="Experience icon"
-                        class="icon"
-                    />
-                    <h3>Experience</h3>
-                    <p>+2 years <br />Programmer Analyst & DevOps</p>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+        <!-- HERO -->
+        <section id="top" class="hero section">
+            <div class="container hero__grid">
+                <div class="hero__content">
+                    <p class="eyebrow">AUTODIDACTA · DESARROLLO DE SOFTWARE</p>
+
+                    <h1 class="hero__title">
+                        Alvaro H. A.
+                    </h1>
+
+                    <p class="hero__role">Python · JavaScript · Sistemas web asistidos por IA</p>
+
+                    <p class="hero__lead">
+                        Desarrollo software con Python y JavaScript mediante
+                        flujos de ingeniería asistidos por IA, con foco en
+                        implementaciones estructuradas, iteración y productos
+                        web reales.
+                    </p>
+
+                    <div class="hero__actions">
+                        <a class="button button--primary" href="#work">
+                            Ver proyectos seleccionados
+                            <span aria-hidden="true">↘</span>
+                        </a>
+
+                        <a
+                            class="button button--secondary"
+                            href="https://github.com/AlvaroDevwork"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub
+                            <span aria-hidden="true">↗</span>
+                        </a>
+                    </div>
+
                 </div>
-                <div class="details-container">
-                    <img
-                        src="./assets/Education2.png"
-                        alt="Education icon"
-                        class="icon"
-                    />
-                    <h3>Education</h3>
-                    <p>IP Iplacex<br />Programmer Analyst</p>
+
+                <figure class="hero__portrait">
+                    <div class="hero__portrait-frame">
+                        <img
+                            src="./assets/alvaro-profile-2026.png"
+                            alt="Retrato de Alvaro H. A."
+                            width="1086"
+                            height="1448"
+                            decoding="async"
+                            fetchpriority="high"
+                        />
+                    </div>
+
+                </figure>
+            </div>
+        </section>
+
+        <!-- DEVELOPMENT JOURNEY -->
+        <section id="about" class="section section--bordered">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">TRAYECTORIA DE DESARROLLO</p>
+
+                    <h2>
+                        Construido mediante
+                        <span>iteración constante.</span>
+                    </h2>
+
+                    <p>
+                        Mi trayectoria en el desarrollo de software ha sido
+                        progresiva: primero exploración, luego trabajo disciplinado
+                        en proyectos y, actualmente, un mayor foco en sistemas
+                        reales y flujos de ingeniería asistidos por IA.
+                    </p>
+                </div>
+
+                <div class="journey">
+                    <article class="journey__item">
+                        <div class="journey__year">2023</div>
+
+                        <div class="journey__content">
+                            <span class="status-label">EXPLORAR</span>
+
+                            <h3>Comencé a explorar la programación</h3>
+
+                            <p>
+                                Inicié mi aprendizaje del desarrollo de software
+                                y comprendí los fundamentos para construir
+                                aplicaciones y sistemas web.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="journey__item">
+                        <div class="journey__year">2025</div>
+
+                        <div class="journey__content">
+                            <span class="status-label">CONSTRUIR</span>
+
+                            <h3>Comencé a documentar trabajo de desarrollo real</h3>
+
+                            <p>
+                                Incorporé Git y GitHub a un flujo de ingeniería
+                                constante, documentando cambios, iteraciones y
+                                avances mediante commits.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="journey__item">
+                        <div class="journey__year">2026</div>
+
+                        <div class="journey__content">
+                            <span class="status-label">ENTREGAR</span>
+
+                            <h3>Construyo sistemas web y full-stack reales</h3>
+
+                            <p>
+                                Trabajo con Python, JavaScript y agentes de
+                                programación asistidos por IA mientras desarrollo
+                                proyectos web en producción y una plataforma
+                                modular full-stack.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TECHNICAL FOCUS -->
+        <section id="focus" class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">ENFOQUE TÉCNICO</p>
+
+                    <h2>
+                        Tecnologías <span>según su uso.</span>
+                    </h2>
+
+                    <p>
+                        Herramientas principales y tecnologías en aprendizaje activo.
+                    </p>
+                </div>
+
+                <div class="focus-grid">
+                    <article class="focus-card">
+                        <p class="focus-card__label">DESARROLLO PRINCIPAL</p>
+                        <h3>Python · JavaScript</h3>
+                        <p class="focus-card__summary">Lenguajes base para desarrollo de software y sistemas web.</p>
+                    </article>
+
+                    <article class="focus-card">
+                        <p class="focus-card__label">CONTROL DE VERSIONES · HERRAMIENTAS</p>
+                        <h3>Git · GitHub</h3>
+                        <p class="focus-card__summary">Flujo de cambios, colaboración y documentación técnica.</p>
+                    </article>
+
+                    <article class="focus-card focus-card--agent">
+                        <p class="focus-card__label">DESARROLLO ASISTIDO POR IA</p>
+                        <h3>Codex CLI · Codex Desktop · OpenCode · DeepSeek V4 Pro · Agentes de IA</h3>
+                        <p class="focus-card__note">
+                            OpenCode — entorno open source utilizado desde Bash para trabajar con distintos agentes.
+                            DeepSeek V4 Pro se utiliza a través de OpenCode.
+                        </p>
+                    </article>
+
+                    <article class="focus-card focus-card--learning">
+                        <p class="focus-card__label">EN APRENDIZAJE ACTIVO</p>
+                        <h3>SQL · AWS · LangChain · LangGraph</h3>
+                        <p class="focus-card__summary">Tecnologías que incorporo progresivamente al desarrollo full-stack.</p>
+                    </article>
                 </div>
             </div>
-            <div class="text-container">
-                <p>
-                    I’m a Programmer analyst and DevOps passionate about automation,
-                    infrastructure, and modern web development. I integrate cloud-native
-                    tools with robust frontend/backends to deliver secure and scalable applications.
-                </p>
+        </section>
+
+        <!-- SELECTED WORK -->
+        <section id="work" class="section section--dark">
+            <div class="container">
+                <div class="section-heading section-heading--light">
+                    <p class="eyebrow">PROYECTOS SELECCIONADOS</p>
+
+                    <h2>
+                        Proyectos reales.
+                        <span>Desarrollo real.</span>
+                    </h2>
+
+                </div>
+
+                <div class="projects">
+                    <!-- CICLOBEEF STUDIO -->
+                    <article class="project">
+                        <div
+                            class="project__visual project__visual--cbs"
+                            aria-hidden="true"
+                        >
+                            <div class="project-poster">
+                                <div class="project-poster__top">
+                                    <span>01</span>
+                                    <span>E-COMMERCE</span>
+                                </div>
+
+                                <div class="project-poster__brand">
+                                    <strong>CicloBeef Studio</strong>
+                                </div>
+
+                                <!-- Replace this artwork with real desktop/mobile media when available. -->
+                                <div class="project-poster__footer">Arte · Web · Comercio</div>
+                            </div>
+                        </div>
+
+                        <div class="project__content">
+                            <div class="project__meta">
+                                <span class="project__number">01</span>
+                                <span class="project-status project-status--production">
+                                    Producción
+                                </span>
+                            </div>
+
+                            <h3>CicloBeef Studio</h3>
+
+                            <p class="project__description">
+                                E-commerce con integración de Shopify.
+                            </p>
+
+                            <div class="project__details">
+                                <div>
+                                    <span>DESARROLLO</span>
+                                    <p>JavaScript · HTML</p>
+                                </div>
+
+                                <div>
+                                    <span>COMERCIO</span>
+                                    <p>Integración con Shopify</p>
+                                </div>
+                            </div>
+
+                            <div class="project__actions">
+                                <a
+                                    class="button button--light"
+                                    href="https://github.com/AlvaroDevwork/ciclobeefstudio-page"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Repositorio
+                                    <span aria-hidden="true">↗</span>
+                                </a>
+
+                                <a
+                                    class="button button--outline-light"
+                                    href="https://ciclobeefstudio.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Visitar sitio web
+                                    <span aria-hidden="true">↗</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ALWAYS BEAUTIFUL -->
+                    <article class="project project--reverse">
+                        <div
+                            class="project__visual project__visual--always"
+                            aria-hidden="true"
+                        >
+                            <div class="project-poster">
+                                <div class="project-poster__top">
+                                    <span>02</span>
+                                    <span>PLATAFORMA MODULAR</span>
+                                </div>
+
+                                <div class="project-poster__brand">
+                                    <strong>Always Beautiful</strong>
+                                </div>
+
+                                <!-- Replace this artwork with real application media when available. -->
+                                <div class="project-poster__footer">Atención · Personas · Citas</div>
+                            </div>
+                        </div>
+
+                        <div class="project__content">
+                            <div class="project__meta">
+                                <span class="project__number">02</span>
+                                <span class="project-status project-status--development">
+                                    En desarrollo
+                                </span>
+                            </div>
+
+                            <h3>Always Beautiful</h3>
+
+                            <p class="project__description">
+                                Gestión modular para salones de belleza:
+                                servicios, profesionales, reservas, carrito y citas.
+                            </p>
+
+                            <div class="project__details">
+                                <div>
+                                    <span>FRONTEND</span>
+                                    <p>React · JavaScript</p>
+                                </div>
+
+                                <div>
+                                    <span>BACKEND</span>
+                                    <p>Python · FastAPI · SQLAlchemy</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </article>
+                </div>
             </div>
-        </div>
-    </div>
-    <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-    />
-</section>
-    <section id="experience">
-        <p class="section__text__p1">Explore My</p>
-        <h1 class="title">Experience</h1>
-        <div class="experience-details-container">
-            <div class="about-containers">
-                <div class="details-container">
-                    <h2 class="experience-sub-title">Programming Analyst</h2>
-                    <div class="article-container">
-                        <article>
-                            <img 
-                            src="./assets/checkmark.png" 
-                            alt="Experience icon"
-                            class="icon"
-                            />
-                            <div>
-                                <h3>HTML</h3>
-                                <p>Basic</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img 
-                            src="./assets/checkmark.png" 
-                            alt="Experience icon"
-                            class="icon"
-                            />
-                            <div>
-                                <h3>CSS</h3>
-                                <p>Basic</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img 
-                            src="./assets/checkmark.png" 
-                            alt="Experience icon"
-                            class="icon"
-                            />
-                            <div>
-                                <h3>JavaScript</h3>
-                                <p>Basic</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img 
-                            src="./assets/checkmark.png" 
-                            alt="Experience icon"
-                            class="icon"
-                            />
-                            <div>
-                                <h3>Python</h3>
-                                <p>Basic</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img 
-                            src="./assets/checkmark.png" 
-                            alt="Experience icon"
-                            class="icon"
-                            />
-                            <div>
-                                <h3>Git & GitHub</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
+        </section>
+
+        <!-- ENGINEERING WORKFLOW -->
+        <section id="workflow" class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">FLUJO DE TRABAJO</p>
+
+                    <h2>
+                        Del plan al despliegue.
+                    </h2>
+
+                    <p>
+                        Desarrollo incremental con control de versiones,
+                        revisión de código y validación técnica.
+                    </p>
+                </div>
+
+                <div class="workflow">
+                    <article class="workflow__step">
+                        <span>01</span>
+                        <h3>Planificar</h3>
+                        <p>
+                            Analizar requisitos, definir la arquitectura y
+                            establecer criterios de aceptación.
+                        </p>
+                    </article>
+
+                    <article class="workflow__step">
+                        <span>02</span>
+                        <h3>Agentes</h3>
+                        <p>
+                            Contextualizar agentes de IA con el repositorio,
+                            los requisitos y las restricciones para apoyar la implementación.
+                        </p>
+                    </article>
+
+                    <article class="workflow__step">
+                        <span>03</span>
+                        <h3>Implementar</h3>
+                        <p>
+                            Implementar cambios modulares en la rama de trabajo
+                            y revisar el código antes del QA local.
+                        </p>
+                    </article>
+
+                    <article class="workflow__step">
+                        <span>04</span>
+                        <h3>Probar</h3>
+                        <p>
+                            Ejecutar el QA local: pruebas funcionales, diseño
+                            responsivo, accesibilidad y errores en ejecución.
+                        </p>
+                    </article>
+
+                    <article class="workflow__step">
+                        <span>05</span>
+                        <h3>Iterar</h3>
+                        <p>
+                            Corregir defectos y repetir el QA local y las pruebas
+                            de regresión hasta cumplir los criterios de aceptación.
+                        </p>
+                    </article>
+
+                    <article class="workflow__step">
+                        <span>06</span>
+                        <h3>Publicar</h3>
+                        <p>
+                            Con el QA local aprobado, crear el commit, integrar
+                            y versionar la entrega; desplegar y verificar el resultado.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <div class="contact-final">
+        <section id="contact" class="section section--contact">
+            <div class="container contact">
+                <div>
+                    <p class="eyebrow">CONTACTO</p>
+
+                    <h2>
+                        Construyamos
+                        <span>algo útil.</span>
+                    </h2>
+                </div>
+
+                <div class="contact__content">
+                    <p>
+                        Para proyectos de software, colaboraciones o trabajo
+                        técnico, puedes contactarme directamente o explorar mi
+                        trayectoria de desarrollo en GitHub.
+                    </p>
+
+                    <div class="contact__actions">
+                        <a
+                            class="contact__email"
+                            href="mailto:contacto@alvarodev.work"
+                        >
+                            contacto@alvarodev.work
+                        </a>
+
+                        <a
+                            class="button button--secondary"
+                            href="https://github.com/AlvaroDevwork"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub
+                            <span aria-hidden="true">↗</span>
+                        </a>
                     </div>
                 </div>
-                <div class="details-container">
-                <h2 class="experience-sub-title">DevOps & Tools</h2>
-                <div class="article-container">
-                    <article>
-                        <img 
-                        src="./assets/checkmark.png" 
-                        alt="Experience icon"
-                        class="icon"
-                        />
-                        <div>
-                            <h3>AWS</h3>
-                            <p>Basic</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img 
-                        src="./assets/checkmark.png" 
-                        alt="Experience icon"
-                        class="icon"
-                        />
-                        <div>
-                            <h3>GitHub Actions</h3>
-                            <p>Basic</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img 
-                        src="./assets/checkmark.png" 
-                        alt="Experience icon"
-                        class="icon"
-                        />
-                        <div>
-                            <h3>Linux</h3>
-                            <p>Basic</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img 
-                        src="./assets/checkmark.png" 
-                        alt="Experience icon"
-                        class="icon"
-                        />
-                        <div>
-                            <h3>Oracle cloud</h3>
-                            <p>Basic</p>
-                        </div>
-                    </article>
-                </div>
+            </div>
+        </section>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container site-footer__inner">
+            <div>
+                <p>
+                    Construido con HTML, CSS y JavaScript.
+                    <br />
+                    Flujo de ingeniería asistido por IA.
+                </p>
+            </div>
+
+            <div class="site-footer__meta">
+                <span>© 2026 Alvaro H. A.</span>
+                <span>Desarrollo de software</span>
             </div>
         </div>
-    </div>
-    <img 
-    src="./assets/arrow.png" 
-    alt="Arrow icon"
-    class="icon arrow"
-    onclick="location.href='./#projects'"
-    />
-</section>
-<section id="projects">
-    <p class="section__text__p1">Browse My Recent</p>
-    <h1 class="title">Projects</h1>
-    <div class="experience-details-container">
-        <div class="about-containers">
-            <div class="details-container color-container">
-                <div class="article-container">
-                    <img 
-                    src="./assets/project-1.png" 
-                    alt="Project 1"
-                    class="project-img"
-                    />
-                </div>
-                <h2 class="experience-sub-title project-title">Project One</h2>
-                <div class="btn-container">
-                    <button 
-                    class="btn btn-color-2 project-btn"
-                    onclick="location.href='https://github.com/AlvaroDevwork/ciclobeefstudio-page'"
-                    >
-                    GitHub
-                    </button>
-                    <button 
-                    class="btn btn-color-2 project-btn"
-                    onclick="location.href='https://github.com/'"
-                    >
-                    Live Demo
-                    </button>
-                </div>
-            </div>
-            <div class="details-container color-container">
-                <div class="article-container">
-                    <img 
-                    src="./assets/project-2.png" 
-                    alt="Project 2"
-                    class="project-img"
-                    />
-                </div>
-                <h2 class="experience-sub-title project-title">Project Two</h2>
-                <div>
-                    <button 
-                    class="btn btn-color-2 project-btn"
-                    onclick="location.href='https://github.com/AlvaroDevwork'"
-                    >
-                    GitHub
-                    </button>
-                    <button 
-                    class="btn btn-color-2 project-btn"
-                    onclick="location.href='https://github.com/'"
-                    >
-                    Live Demo
-                    </button>
-                </div>
-            </div>
-            <div class="details-container color-container">
-                <div class="article-container">
-                    <img 
-                    src="./assets/project-3.png" 
-                    alt="Project 3"
-                    class="project-img"
-                    />
-                </div>
-                <h2 class="experience-sub-title project-title">Project Three</h2>
-                <div>
-                    <button 
-                    class="btn btn-color-2 project-btn"
-                    onclick="location.href='https://github.com/AlvaroDevwork/'"
-                    >
-                    GitHub
-                    </button>
-                    <button 
-                    class="btn btn-color-2 project-btn"
-                    onclick="location.href='https://github.com/'"
-                    >
-                    Live Demo
-                    </button>
-                </div>
-            </div>
+    </footer>
         </div>
-    </div>
-    <img 
-    src="./assets/arrow.png" 
-    alt="Arrow icon"
-    class="icon arrow"
-    onclick="location.href='./#contact'"
-    />
-</section>
-<section id="contact">
-    <p class="section__text__p1">Get in Touch</p>
-    <h1 class="title">Contact Me</h1>
-    <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-            <img 
-            src="./assets/email.png" 
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-            />
-            <p><a href="mailto:contacto@alvarodev.work">contacto@alvarodev.work</a></p>
-        </div>
-        <div class="contact-info-container">
-            <img 
-            src="./assets/linkedin.png" 
-            alt="linkedin icon"
-            class="icon contact-icon"
-            />
-            <p></p>
-        </div>
-    </div>
-</section>
-<footer>
-    <nav>
-        <div class="nav-links-container">
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-    <p>Copyright &#169; 2026 Alvaro H. A.. All Rights Reserved.</p>
-</footer>
-<script src="script.js"></script>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>

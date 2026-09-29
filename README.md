@@ -1,313 +1,94 @@
-# Alvaro H. A. — Professional Web Portfolio  
-## v0.2.0 — HTML, CSS & JavaScript Integration Phase
+# AlvaroDevwork — Portafolio web
 
----
+## Descripción
 
-## Overview
+Portafolio oficial de AlvaroDevwork, presentado como **Alvaro H. A.** La versión
+v0.3.0 reúne trayectoria de aprendizaje, tecnologías, proyectos, proceso de
+desarrollo y contacto en una interfaz adaptable a escritorio y dispositivos móviles.
 
-This repository contains the **v0.2.0 release** of my professional web portfolio.
+Repositorio: https://github.com/AlvaroDevwork/alvaroha-dev-portfolio
 
-This version represents the complete integration of **HTML, CSS, and JavaScript**, transforming the initial static HTML foundation into a fully styled, responsive, and interactive web portfolio.
+## Tecnologías
 
-The project was developed following **professional software engineering practices**, including:
+- HTML semántico, CSS y JavaScript nativo.
+- IBM Plex Sans e IBM Plex Mono mediante Google Fonts.
+- Git, GitHub y GitHub Actions para versionado y publicación.
+- Sin frameworks, dependencias de compilación ni servicios de backend.
 
-- Strict **GitFlow workflow**
-- **Conventional Commits**
-- **Pull Requests**
-- Incremental and traceable feature integration
+## Arquitectura
 
----
+`index.html` contiene la navegación y las secciones de presentación, trayectoria,
+tecnologías, proyectos, flujo de trabajo y contacto. Los estilos se distribuyen
+entre `style.css` y `mediaqueries.css`; `script.js` implementa la interacción de
+navegación. Los recursos visuales se encuentran en `assets/`.
 
-## Project Scope — Phase 2 (HTML + CSS + JS)
+La navegación incluye controles accesibles, estados de foco y adaptación móvil.
+Los estilos contemplan la preferencia de movimiento reducido.
 
-### ✅ Included in v0.2.0
-
-- Semantic HTML5 structure  
-- Modular and scalable CSS architecture  
-- Responsive design using media queries  
-- Desktop and mobile navigation (hamburger menu)  
-- JavaScript interaction for mobile navigation  
-- Consistent class naming and layout alignment  
-- GitFlow methodology  
-- Conventional Commits  
-- Pull Requests and merge commits  
-- Automated GitHub Pages deployment via tags  
-
-### ❌ Not included yet
-
-- Advanced JavaScript logic  
-- Animations beyond base CSS transitions  
-- Backend or API integration  
-- JavaScript frameworks (React, Vue, etc.)
-
----
-
-## Development Workflow (GitFlow)
-
-This project strictly follows **GitFlow**:
-
-- `main` → stable, tagged releases only  
-- `develop` → active integration branch  
-- `feature/*` → new functionality or sections  
-- `fix/*` → syntax, structure, or consistency fixes  
-- `release/*` → version stabilization (when applicable)  
-- `tag` → production-ready snapshots  
-
-All changes are integrated into `develop` through **Pull Requests and merge commits**.
-
----
-
-## Commit History — Real Construction Order
-
-The project was built incrementally, as reflected in the Git history.
-
-### HTML Foundation — v0.1.0
-
-- `feat(html-head)` — Base HTML skeleton and meta structure  
-- `feat(navbar-desktop)` — Desktop navigation with anchor links  
-- `feat(about)` — About section with experience and education  
-- `feat(experience)` — Experience section with skill grouping  
-- `feat(projects)` — Portfolio projects showcase  
-- `feat(contact)` — Contact section with email and LinkedIn  
-- `feat(footer)` — Footer with navigation and copyright  
-- `feat(profile)` — Hero profile section with image and intro  
-
-### CSS Integration — v0.2.0
-
-- `style(css)` — Base CSS configuration (fonts, resets, transitions)  
-- `feat(css-navbar)` — Desktop navigation styles  
-- `feat(css-navbar-mobile)` — Mobile hamburger navigation styles  
-- `style(css-layout)` — Global section layout and containers  
-- `feat(css-profile)` — Profile section layout and alignment  
-- `feat(css-components)` — Shared buttons and icon components  
-- `fix(css-naming)` — CSS class and ID naming alignment  
-- `feat(css-sections)` — About, Experience, Projects, Contact and Footer styles  
-- `feat(css-mediaqueries)` — Responsive breakpoints and layout adjustments  
-
-### JavaScript Integration
-
-- `feat(js-menu)` — Hamburger menu toggle logic  
-
-### Structural Fixes & Stabilization
-
-- `fix(html-python-title)` — Typo correction in HTML content  
-- `fix(html)` — Markup structure fixes, class alignment, and anchor corrections  
-
----
-
-## HTML Section Breakdown
-
-| Section | Purpose |
-|------|--------|
-| `nav#desktop-nav` | Desktop navigation |
-| `nav#hamburger-nav` | Mobile navigation |
-| `section#profile` | Hero profile section |
-| `section#about` | About me |
-| `section#experience` | Skills and experience |
-| `section#projects` | Portfolio projects |
-| `section#contact` | Contact information |
-| `footer` | Footer and secondary navigation |
-
----
-
-## CSS Architecture
-
-The CSS is structured for **clarity, maintainability, and scalability**.
-
-### `style.css`
-
-- Base styles  
-- Layout structure  
-- Shared components (buttons, icons)  
-- Section-specific styles  
-
-### `mediaqueries.css`
-
-- Responsive behavior  
-- Breakpoints for desktop, tablet, and mobile  
-
-### Design principles applied
-
-- Mobile-first adjustments  
-- Reusable components  
-- Consistent class naming  
-- HTML–CSS structural alignment  
-
----
-
-## JavaScript Overview
-
-JavaScript usage is intentionally **minimal and focused**.
-
-### `script.js`
-
-- Handles hamburger menu toggle  
-- Ensures clean separation of concerns  
-- No external dependencies  
-
----
-
-## Local Usage
-
-This is a **pure static web project**.
-
-# Alvaro H. A. — Professional Web Portfolio
-
-**Version:** `v0.2.0`  
-**Phase:** HTML, CSS & JavaScript Integration
-
----
-
-## 🚀 Overview
-
-This release transforms the initial static foundation (`v0.1.0`) into a styled, responsive, and interactive portfolio. Built with a clean architecture, the codebase reflects real software engineering practices:
-
-- **Semantic HTML5**
-- **Modular CSS** (scalable, mobile-first, media queries)
-- **JavaScript** (hamburger menu interaction)
-- **Strict GitFlow**, **Conventional Commits**, and **Pull Requests**
-
----
-
-## ✅ Scope — What’s Included
-
-- Desktop & mobile navigation  
-- Responsive layout and section alignment  
-- Reusable UI components (buttons, icons)  
-- Clean class naming & structural consistency  
-- GitHub Pages deployment (auto via GitHub Actions)
-
----
-
-## 🚧 Not Included Yet
-
-- Advanced JS logic or animations  
-- API/backend integration  
-- Frontend frameworks (React, Vue, etc.)
-
----
-
-## 🧪 GitFlow Development Workflow
-
-| Branch         | Purpose                                 |
-|----------------|-----------------------------------------|
-| `main`         | Stable, tagged releases only            |
-| `develop`      | Active integration branch               |
-| `feature/*`    | New sections or functionality           |
-| `fix/*`        | Syntax/structure/style corrections      |
-| `release/*`    | Version stabilization (optional)        |
-| `tags`         | Production-ready version snapshots      |
-
-All changes are integrated into `develop` through Pull Requests.
-
----
-
-## 🧱 Construction History (Commits Summary)
-
-### 🔹 HTML Foundation (`v0.1.0`)
-
-- `feat(html-head)` – Base structure & meta  
-- `feat(navbar-desktop)` – Navigation bar  
-- `feat(about)` → `contact` → `footer` – All sections built semantically  
-- `feat(profile)` – Hero/profile section
-
-### 🔹 CSS Integration (`v0.2.0`)
-
-- `style(css)` – Fonts, resets, transitions  
-- `feat(css-navbar)`, `css-profile`, `css-components`  
-- `feat(css-sections)` – All section styles  
-- `feat(css-mediaqueries)` – Responsive design  
-- `fix(css-naming)` – Class consistency
-
-### 🔹 JavaScript
-
-- `feat(js-menu)` – Hamburger toggle logic
-
-### 🛠️ Fixes
-
-- `fix(html-python-title)` – Typo corrections  
-- `fix(html)` – Markup cleanup and alignment
-
----
-
-## 🧩 Section Reference
-
-| Section ID          | Purpose                    |
-|---------------------|----------------------------|
-| `#desktop-nav`       | Desktop navigation         |
-| `#hamburger-nav`     | Mobile menu navigation     |
-| `#profile`           | Hero/introduction section  |
-| `#about`             | Personal info              |
-| `#experience`        | Skills & experience        |
-| `#projects`          | Project showcase           |
-| `#contact`           | Contact info               |
-| `footer`             | Bottom nav + legal         |
-
----
-
-## 🎨 CSS Architecture
-
-- **`style.css`**: Base styles, layout, components  
-- **`mediaqueries.css`**: Breakpoints for responsiveness  
-- **Design Focus**: Mobile-first, reusable classes, layout alignment
-
----
-
-## 🧠 JavaScript Strategy
-
-Minimalist approach:
-
-- **`script.js`**: Only for hamburger toggle  
-- No external libraries or frameworks  
-- Clean separation of concerns
-
----
-
-## 💻 Local Usage
-
-This is a **pure static project**. No build tools required.
+## Desarrollo local
 
 ```bash
 git clone https://github.com/AlvaroDevwork/alvaroha-dev-portfolio.git
 cd alvaroha-dev-portfolio
-open index.html
+python3 -m http.server 8088 --bind 127.0.0.1
 ```
 
-> No dependencies or package managers needed.
+Abrir http://127.0.0.1:8088/. No se requiere instalar paquetes.
+Antes de integrar cambios, revisar enlaces, recursos, navegación por teclado,
+comportamiento responsive y `git diff --check`.
 
----
-
-## 🚀 Deployment
-
-Deployment is fully automated via **GitHub Actions** and hosted on **GitHub Pages**.
-
-### 🔁 Trigger
-
-Deployment occurs automatically when a new tag is pushed:
+## Estructura del proyecto
 
 ```text
-vX.Y.Z
+index.html
+style.css
+mediaqueries.css
+script.js
+assets/
+README.md
+.github/workflows/deploy-ghpages-on-tag.yml
 ```
 
-Each version tag = production-ready snapshot.
+## Privacidad de indexación
 
----
+El HTML incluye una única directiva:
 
-## 📌 Versioning Strategy
+```html
+<meta name="robots" content="noindex, nofollow">
+```
 
-Semantic Versioning aligned with development stages:
+Solicita a los buscadores compatibles que no indexen la página. No restringe el
+acceso por URL ni sustituye autenticación. No debe bloquearse el rastreo necesario
+para leer esta directiva.
 
-- `v0.1.0` → HTML-only base  
-- `v0.2.0` → Full integration of HTML + CSS + JS *(current)*  
-- `v0.3.0` *(planned)* → Animations, enhancements & JS logic
+## Despliegue
 
-Each version is deployed via Git tag.
+GitHub Pages utiliza un único workflow de GitHub Actions, activado exclusivamente
+al publicar etiquetas `v*`. Las acciones oficiales preparan y publican un artefacto
+con `index.html`, las hojas de estilo, `script.js` y `assets/`.
+La documentación y los archivos administrativos quedan fuera del sitio publicado.
 
----
+La configuración de Pages debe utilizar `build_type=workflow`. El dominio se
+administra en los ajustes de Pages, sin un archivo CNAME en el repositorio.
 
-## 📇 Contact
+## Versionado
 
-**Alvaro H. A.**  
-📩 [contacto@alvarodev.work](mailto:contacto@alvarodev.work)  
+Versión de referencia: **v0.3.0**.
 
----
+Los cambios se integran mediante pull requests desde `feature/*` hacia `develop`
+y después hacia `main`, conservando los commits mediante merge normal.
+El QA local precede a los commits; cada commit conceptual se publica de forma
+independiente. Las etiquetas anotadas se crean sobre `main` después de la integración.
+No se desplazan etiquetas publicadas: una corrección posterior requiere otra versión.
+
+## Dominio
+
+Dominio oficial: https://alvarodev.work
+
+Su disponibilidad depende de la configuración DNS y del certificado de GitHub Pages.
+Los registros de correo deben conservarse al configurar los registros web.
+
+## Contacto
+
+- Correo: [contacto@alvarodev.work](mailto:contacto@alvarodev.work)
+- GitHub: https://github.com/AlvaroDevwork
