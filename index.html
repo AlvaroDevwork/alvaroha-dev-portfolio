@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="robots" content="noindex, nofollow">
 
     <title>Alvaro H. A. | Desarrollo de software y sistemas web con IA</title>
@@ -83,36 +83,41 @@
         <section id="top" class="hero section">
             <div class="container hero__grid">
                 <div class="hero__content">
-                    <p class="eyebrow">AUTODIDACTA · DESARROLLO DE SOFTWARE</p>
+                    <div class="hero__intro">
+                        <p class="eyebrow">AUTODIDACTA · DESARROLLO DE SOFTWARE</p>
 
-                    <h1 class="hero__title">
-                        Alvaro H. A.
-                    </h1>
+                        <h1 class="hero__title">
+                            Alvaro H. A.
+                        </h1>
 
-                    <p class="hero__role">Python · JavaScript · Sistemas web asistidos por IA</p>
+                    </div>
 
-                    <p class="hero__lead">
-                        Desarrollo software con Python y JavaScript mediante
-                        flujos de ingeniería asistidos por IA, con foco en
-                        implementaciones estructuradas, iteración y productos
-                        web reales.
-                    </p>
+                    <div class="hero__summary">
+                        <p class="hero__role">Python · JavaScript · Sistemas web asistidos por IA</p>
 
-                    <div class="hero__actions">
-                        <a class="button button--primary" href="#work">
-                            Ver proyectos seleccionados
-                            <span aria-hidden="true">↘</span>
-                        </a>
+                        <p class="hero__lead">
+                            Desarrollo software con Python y JavaScript mediante
+                            flujos de ingeniería asistidos por IA, con foco en
+                            implementaciones estructuradas, iteración y productos
+                            web reales.
+                        </p>
 
-                        <a
-                            class="button button--secondary"
-                            href="https://github.com/AlvaroDevwork"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            GitHub
-                            <span aria-hidden="true">↗</span>
-                        </a>
+                        <div class="hero__actions">
+                            <a class="button button--primary" href="#work">
+                                Ver proyectos seleccionados
+                                <span aria-hidden="true">↘</span>
+                            </a>
+
+                            <a
+                                class="button button--secondary"
+                                href="https://github.com/AlvaroDevwork"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                GitHub
+                                <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
                     </div>
 
                 </div>
@@ -120,10 +125,10 @@
                 <figure class="hero__portrait">
                     <div class="hero__portrait-frame">
                         <img
-                            src="./assets/alvaro-profile-2026.png"
+                            src="./assets/alvaro-profile-2026-2x.png"
                             alt="Retrato de Alvaro H. A."
-                            width="1086"
-                            height="1448"
+                            width="736"
+                            height="981"
                             decoding="async"
                             fetchpriority="high"
                         />
@@ -152,9 +157,15 @@
                     </p>
                 </div>
 
-                <div class="journey">
+                <div class="journey-controls" hidden>
+                    <button class="journey-control journey-control--previous" type="button" aria-label="Mostrar año anterior" aria-controls="about-journey">←</button>
+                    <span class="journey-position" role="status" aria-live="polite" aria-atomic="true"></span>
+                    <button class="journey-control journey-control--next" type="button" aria-label="Mostrar año siguiente" aria-controls="about-journey">→</button>
+                </div>
+
+                <div class="journey" id="about-journey">
                     <article class="journey__item">
-                        <div class="journey__year">2023</div>
+                        <div class="journey__year"><span>2023</span></div>
 
                         <div class="journey__content">
                             <span class="status-label">EXPLORAR</span>
@@ -169,8 +180,24 @@
                         </div>
                     </article>
 
+                    <article class="journey__item journey__item--tablet-only">
+                        <div class="journey__year"><span>2024</span></div>
+
+                        <div class="journey__content">
+                            <span class="status-label">CONFIGURAR</span>
+
+                            <h3>Creé entornos virtuales para sistemas reales</h3>
+
+                            <p>
+                                Utilicé VirtualBox y VMware para crear máquinas virtuales e instalar
+                                CentOS 7, Fedora y Windows Server, realizando configuraciones avanzadas
+                                mediante comandos.
+                            </p>
+                        </div>
+                    </article>
+
                     <article class="journey__item">
-                        <div class="journey__year">2025</div>
+                        <div class="journey__year"><span>2025</span></div>
 
                         <div class="journey__content">
                             <span class="status-label">CONSTRUIR</span>
@@ -186,7 +213,7 @@
                     </article>
 
                     <article class="journey__item">
-                        <div class="journey__year">2026</div>
+                        <div class="journey__year"><span>2026</span></div>
 
                         <div class="journey__content">
                             <span class="status-label">ENTREGAR</span>
@@ -265,7 +292,13 @@
 
                 </div>
 
-                <div class="projects">
+                <div class="work-controls" hidden>
+                    <button class="work-control work-control--previous" type="button" aria-label="Proyecto anterior" aria-controls="work-projects">←</button>
+                    <span class="work-position" role="status" aria-live="polite" aria-atomic="true"></span>
+                    <button class="work-control work-control--next" type="button" aria-label="Proyecto siguiente" aria-controls="work-projects">→</button>
+                </div>
+
+                <div class="projects" id="work-projects">
                     <!-- CICLOBEEF STUDIO -->
                     <article class="project">
                         <div
@@ -466,7 +499,6 @@
         </section>
 
         <!-- CONTACT -->
-        <div class="contact-final">
         <section id="contact" class="section section--contact">
             <div class="container contact">
                 <div>
@@ -507,6 +539,8 @@
             </div>
         </section>
 
+    </main>
+
     <footer class="site-footer" role="contentinfo">
         <div class="container site-footer__inner">
             <div>
@@ -523,8 +557,6 @@
             </div>
         </div>
     </footer>
-        </div>
-    </main>
 
     <script src="script.js"></script>
 </body>

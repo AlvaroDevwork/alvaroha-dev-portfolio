@@ -1,46 +1,608 @@
-/* Responsive overrides; component defaults live in style.css. */
+/* Content-driven responsive ranges; mobile defaults live in style.css. */
+@media (min-width: 30rem) {
+    .hero__actions .button, .project__actions .button { width: auto; }
+}
+
+/* Tablet section widths follow the same editorial column as About and Technologies. */
+@media (min-width: 48rem) and (max-width: 64rem) and (orientation: portrait) {
+    #work .section-heading,
+    #workflow .section-heading,
+    #contact .section-heading {
+        width: 100%;
+        min-width: 0;
+        max-width: 34rem;
+        margin-inline: auto;
+    }
+    #work .projects,
+    #workflow .workflow,
+    #contact .contact {
+        width: 100%;
+        min-width: 0;
+        max-width: 34rem;
+        margin-inline: auto;
+    }
+    #work .projects { gap: clamp(1.25rem, 2.5vw, 1.75rem); }
+    #workflow .workflow { gap: clamp(0.75rem, 2vw, 1.25rem); }
+    #contact .contact { gap: clamp(1.5rem, 4vw, 2.5rem); }
+    #contact .contact {
+        grid-template-columns: minmax(0, 1fr);
+        align-items: start;
+    }
+    #contact .contact__content {
+        width: 100%;
+        max-width: 34rem;
+        margin-inline: auto;
+    }
+}
+
+/* Mobile QA: one screen per section with a professional composition. */
+@media (max-width: 47.999rem) {
+    :root {
+        --mobile-screen: calc(100svh - var(--header-height));
+        --mobile-section-space: clamp(1.5rem, 3.5svh, 2.25rem);
+    }
+
+    #top,
+    #about,
+    #focus,
+    #work,
+    #workflow,
+    #contact {
+        min-block-size: var(--mobile-screen);
+        padding-block: var(--mobile-section-space);
+        display: flex;
+        align-items: center;
+    }
+
+    .section-heading,
+    #focus .section-heading,
+    #work .section-heading,
+    #workflow .section-heading,
+    #contact .section-heading {
+        width: 100%;
+        min-width: 0;
+        max-width: 34rem;
+        margin-inline: auto;
+        margin-block-end: 1.25rem;
+    }
+    .section-heading h2 { font-size: clamp(1.6rem, 1.2rem + 2vw, 2.4rem); }
+    .section-heading > p:last-child { margin-top: 0.6rem; font-size: 0.9375rem; }
+
+    /* Hero: title, portrait and summary in one vertical flow. */
+    #top {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: minmax(0, 1fr);
+        align-items: stretch;
+        padding-block-start: clamp(1rem, 2.5svh, 1.75rem);
+        padding-block-end: clamp(2.25rem, 5svh, 3rem);
+    }
+    .hero__content, .hero__summary { display: contents; }
+    .hero__grid {
+        width: 100%;
+        max-width: 100%;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: "intro" "portrait" "role" "lead" "actions";
+        grid-template-rows: auto minmax(0, 1fr) auto auto auto;
+        gap: clamp(1rem, 2.5svh, 1.5rem);
+        justify-items: center;
+    }
+    .hero__grid > *, .hero__intro > *, .hero__summary > *,
+    .hero__actions > *, .hero__portrait-frame, .hero__portrait img {
+        min-width: 0;
+        max-width: 100%;
+    }
+    .hero__intro { grid-area: intro; width: 100%; text-align: center; }
+    .hero__title { font-size: clamp(2.75rem, 12vw, 3.75rem); }
+    .hero__portrait {
+        grid-area: portrait;
+        align-self: center;
+        width: clamp(11rem, 46vw, 15rem);
+        max-width: 100%;
+        margin-inline: auto;
+    }
+    .hero__portrait-frame { width: 100%; border-radius: 14px; }
+    .hero__role {
+        grid-area: role;
+        width: 100%;
+        max-width: 30rem;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 0.9375rem;
+    }
+    .hero__lead {
+        grid-area: lead;
+        width: 100%;
+        max-width: 28rem;
+        margin: 0 auto;
+        font-size: 0.9375rem;
+        line-height: 1.55;
+    }
+    .hero__actions {
+        grid-area: actions;
+        width: 100%;
+        max-width: 28rem;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        overflow-wrap: anywhere;
+    }
+    .hero__actions .button {
+        width: auto;
+        min-height: 2.75rem;
+        padding: 0.6rem 0.9rem;
+        font-size: 0.8125rem;
+    }
+
+    /* About: journey carousel (one year at a time). */
+    #about { display: block; }
+    #about .container { min-width: 0; max-width: 100%; }
+    #about .section-heading { margin-block-end: clamp(1rem, 2.5svh, 1.75rem); }
+    #about .journey-controls:not([hidden]) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.9rem;
+        margin-block-end: 1rem;
+    }
+    #about .journey-control {
+        min-width: 2.5rem;
+        min-height: 2.5rem;
+        padding: 0.4rem;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--surface);
+        color: var(--ink);
+        cursor: pointer;
+    }
+    #about .journey-control:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+    #about .journey-control:disabled { opacity: 0.45; cursor: default; }
+    #about .journey-position { min-width: 11ch; text-align: center; font: 0.8125rem var(--font-mono); color: var(--muted); }
+    #about .journey-ready {
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+        min-width: 0;
+        max-width: 30rem;
+        margin-inline: auto;
+        text-align: center;
+    }
+    #about .journey-ready .journey__item {
+        grid-area: 1 / 1;
+        min-width: 0;
+        max-width: 100%;
+        visibility: hidden;
+    }
+    #about .journey-ready .journey__item.is-active { visibility: visible; }
+    #about .journey__item { padding-top: 1rem; }
+    #about .journey__year { margin-bottom: 0.5rem; }
+    #about .journey__content p { margin-top: 0.5rem; font-size: 0.9375rem; }
+
+    /* Focus: compact two-column grid. */
+    #focus .focus-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.9rem 1rem;
+        width: 100%;
+        max-width: 34rem;
+        margin-inline: auto;
+    }
+    #focus .focus-card { padding-top: 0.7rem; }
+    #focus .focus-card h3 { font-size: 0.9375rem; }
+    #focus .focus-card__summary, #focus .focus-card__note { font-size: 0.75rem; line-height: 1.5; }
+
+    /* Work: project carousel (one project at a time). */
+    #work { display: block; }
+    #work .container { min-width: 0; max-width: 100%; }
+    #work .section-heading { margin-block-end: 1rem; }
+    #work .work-controls:not([hidden]) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.9rem;
+        margin-block-end: 1rem;
+    }
+    #work .work-control {
+        min-width: 2.5rem;
+        min-height: 2.5rem;
+        padding: 0.4rem;
+        border: 1px solid #567363;
+        border-radius: 6px;
+        background: transparent;
+        color: #f7faf8;
+        cursor: pointer;
+    }
+    #work .work-control:hover:not(:disabled) { border-color: #a3cfb7; color: #a3cfb7; }
+    #work .work-control:disabled { opacity: 0.45; cursor: default; }
+    #work .work-position { min-width: 9ch; text-align: center; font: 0.8125rem var(--font-mono); color: #bdcfc4; }
+    #work .projects.work-ready {
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+        min-width: 0;
+        max-width: 30rem;
+        margin-inline: auto;
+    }
+    #work .work-ready .project {
+        grid-area: 1 / 1;
+        min-width: 0;
+        max-width: 100%;
+        visibility: hidden;
+    }
+    #work .work-ready .project.is-active { visibility: visible; }
+    #work .project { gap: 1rem; }
+    #work .project__visual { display: none; }
+    #work .project-poster { padding: 1rem; gap: 0.5rem; min-height: 0; }
+    #work .project__details { grid-template-columns: minmax(0, 1fr); gap: 0.5rem; }
+
+    /* Workflow: compact two-column grid. */
+    #workflow .workflow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.5rem 1rem;
+        width: 100%;
+        max-width: 34rem;
+        margin-inline: auto;
+    }
+    #workflow .workflow__step { padding-block: 0.5rem; }
+    #workflow .workflow__step h3 { font-size: 0.9375rem; }
+    #workflow .workflow__step p { display: none; }
+
+    /* Contact: single column, vertically centered. */
+    #contact .contact {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.25rem;
+        width: 100%;
+        max-width: 34rem;
+        margin-inline: auto;
+        align-items: start;
+    }
+    #contact .contact__content { width: 100%; max-width: 34rem; margin-inline: auto; }
+
+    /* Hamburger menu: right-anchored compact panel with comfortable tap targets. */
+    .nav-shell { position: relative; }
+    .nav-ready .nav-menu {
+        inset-block-start: calc(100% + 0.25rem);
+        inset-inline-start: auto;
+        inset-inline-end: var(--gutter-right);
+        width: max-content;
+        max-width: calc(100% - var(--gutter-left) - var(--gutter-right));
+        max-height: calc(100dvh - var(--header-height) - 0.5rem);
+        padding: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+    }
+    .nav-ready .nav-menu ul { gap: 0.375rem; }
+    .nav-ready .nav-menu a {
+        min-height: 3rem;
+        padding: 0.6rem 0.9rem;
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+}
+
 @media (min-width: 40rem) {
-    .container { width: min(calc(100% - 4rem), var(--container)); }
+    :root { --page-gutter: 2rem; }
+    .brand__logo { width: 40px; height: 40px; }
     .hero__portrait { width: 19rem; }
-    .focus-grid, .workflow, .project__details { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .workflow, .project__details { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (min-width: 48rem) {
-    #about {
-        min-height: 0;
-        display: block;
-        padding-block: clamp(4rem, 4vw, 4.5rem);
+    .focus-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .contact { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; align-items: center; }
+    .site-footer__inner { grid-template-columns: minmax(0, 1fr) auto; align-items: end; }
+    .site-footer__meta { text-align: right; }
+}
+
+/* Keep the enhanced tablet header attached to the viewport across sections. */
+@media (min-width: 48rem) and (max-width: 64rem) {
+    :root { --header-height: 4.75rem; }
+    .site-header.nav-ready { position: fixed; inset-block-start: 0; inset-inline: 0; }
+    /* Replace the header's former flow space without moving section content. */
+    .site-header.nav-ready + #main-content { padding-block-start: var(--header-height); }
+}
+
+/* Tablet disclosure: compact panel anchored to the toggle's right edge. */
+@media (min-width: 48rem) and (width < 56rem) {
+    .nav-shell { position: relative; }
+    .brand__logo { width: 44px; height: 44px; }
+    .nav-ready .nav-menu {
+        inset-block-start: calc(100% + 0.25rem);
+        inset-inline-start: auto;
+        inset-inline-end: var(--gutter-right);
+        width: min(20rem, calc(100% - var(--gutter-left) - var(--gutter-right)));
+        min-width: 0;
+        max-height: calc(100dvh - var(--header-height) - 0.5rem);
+        padding: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 8px;
     }
+    .nav-ready .nav-menu ul { gap: 0.375rem; }
+    .nav-ready .nav-menu a {
+        min-height: 3.25rem;
+        padding: 0.625rem 1rem;
+        font-size: 1.0625rem;
+    }
+}
+
+/* Tablet Technologies composition follows About's contained reading width. */
+@media (min-width: 48rem) and (max-width: 64rem) and (orientation: portrait) {
+    #focus .container {
+        padding-inline: clamp(2.5rem, 6vw, 4.5rem);
+    }
+    #focus .section-heading {
+        width: 100%;
+        min-width: 0;
+        max-width: 34rem;
+        margin-inline: auto;
+        margin-block-end: clamp(1.5rem, 3dvh, 2.25rem);
+    }
+    #focus .focus-grid {
+        width: 100%;
+        min-width: 0;
+        max-width: 34rem;
+        margin-inline: auto;
+        gap: clamp(1.25rem, 2.5vw, 1.75rem);
+    }
+    #focus .container {
+        margin-block-start: clamp(-7rem, -12vw, -5.5rem);
+    }
+    #focus .focus-card {
+        display: grid;
+        grid-template-rows: auto auto 1fr;
+        gap: 0.4rem;
+        min-width: 0;
+        padding-block: clamp(0.8rem, 1.4vw, 1rem);
+    }
+    #focus .focus-card__label {
+        min-width: 0;
+        min-height: 2.9em;
+        margin: 0;
+        line-height: 1.45;
+    }
+    #focus .focus-card h3 {
+        min-width: 0;
+        margin: 0;
+        overflow-wrap: anywhere;
+        line-height: 1.3;
+    }
+    #focus .focus-card__summary,
+    #focus .focus-card__note {
+        min-width: 0;
+        max-width: 38ch;
+        margin: 0.2rem 0 0;
+        line-height: 1.55;
+    }
+}
+
+@media (min-width: 56rem) {
     .nav-shell { flex-wrap: nowrap; }
-    .nav-ready .nav-toggle { display: none; }
+    header.site-header.nav-ready .nav-toggle { display: none; }
     .nav-menu, .nav-ready .nav-menu[data-open="false"] { display: block; width: auto; }
+    .nav-ready .nav-menu { position: static; max-height: none; overflow: visible; padding: 0; border: 0; }
     .nav-menu ul, .nav-ready .nav-menu ul { flex-direction: row; }
     .hero__grid { grid-template-columns: minmax(0, 1fr) 17rem; gap: 2rem; }
     .hero__portrait { width: 17rem; }
     .hero__title { font-size: clamp(2.7rem, 5vw, 4.5rem); }
     .journey { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
-    .contact { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; align-items: center; }
-    .site-footer__inner { grid-template-columns: 1fr auto; align-items: end; }
-    .site-footer__meta { text-align: right; }
-    #work { min-height: calc(100svh - 4.3125rem); display: flex; align-items: center; }
-    #workflow { min-height: calc(100svh - 4.3125rem); display: flex; align-items: center; }
-    #work .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; align-items: stretch; }
-    #work .project + .project { border-top: 0; padding-top: 0; }
 }
 
 @media (min-width: 64rem) {
+    #about { padding-block: clamp(4rem, 4vw, 4.5rem); }
     .hero__grid { grid-template-columns: minmax(0, 1.3fr) minmax(0, 22rem); gap: clamp(3rem, 6vw, 6rem); }
     .hero__portrait { width: 100%; max-width: 22rem; }
-    .hero__title { white-space: nowrap; font-size: clamp(2.8rem, 4.5vw, 4rem); }
-    #focus .focus-card:nth-child(even) {
-        width: 100%;
-    }
+    .hero__title { font-size: clamp(2.8rem, 4.5vw, 4rem); }
+    #focus, #work, #workflow { min-height: calc(100svh - var(--header-height)); display: flex; align-items: center; }
     #focus .focus-card:nth-child(even) > :is(.focus-card__label, h3, .focus-card__summary, .focus-card__note) {
         width: calc(100% - clamp(3rem, 6vw, 5rem));
         max-width: 31rem;
-        margin-left: auto;
+        margin-inline-start: auto;
         text-align: left;
     }
-    #work .projects { gap: clamp(1.5rem, 3vw, 3rem); }
+    #work .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); align-items: stretch; }
+    #work .project + .project { border-top: 0; padding-top: 0; }
     .workflow { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Portrait tablets: independent screen compositions, with natural growth. */
+@media (min-width: 48rem) and (max-width: 64rem) and (orientation: portrait) {
+    :root {
+        --tablet-screen: calc(100dvh - var(--header-height));
+        --tablet-section-space: clamp(2rem, 4dvh, 3rem);
+        --footer-copy-size: 0.8125rem;
+        --footer-copy-leading: 1.65;
+        --footer-block-padding: 1.5rem;
+        /* Existing footer copy occupies two lines at these content widths. */
+        --tablet-footer-space: calc(2 * var(--footer-copy-size) * var(--footer-copy-leading) + 2 * var(--footer-block-padding));
+    }
+
+    #top, #about, #focus, #work, #workflow, #contact {
+        min-block-size: var(--tablet-screen);
+        padding-block: var(--tablet-section-space);
+        display: flex;
+        align-items: center;
+    }
+    .section-heading, #focus .section-heading, #work .section-heading, #workflow .section-heading {
+        margin-block-end: 1.5rem;
+    }
+    .journey { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+    .focus-grid { gap: 1.5rem; }
+    #focus .focus-card:nth-child(even) > :is(.focus-card__label, h3, .focus-card__summary, .focus-card__note) {
+        width: auto;
+        max-width: 60ch;
+        margin-inline-start: 0;
+    }
+    #work .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+    #work .project + .project { border-block-start: 0; padding-block-start: 0; }
+    #work .project__details { grid-template-columns: minmax(0, 1fr); gap: 0.75rem; }
+    #work .project { gap: 1.25rem; }
+    .workflow { gap: 0.75rem 1.5rem; }
+
+    #contact { min-block-size: calc(var(--tablet-screen) - var(--tablet-footer-space)); }
+    .site-footer { padding-block: var(--footer-block-padding); }
+    .site-footer p { font-size: var(--footer-copy-size); line-height: var(--footer-copy-leading); }
+}
+
+/* Tablet Hero: one vertical flow, with the portrait below the identity. */
+@media (min-width: 48rem) and (max-width: 64rem) {
+    #top {
+        min-block-size: calc(100dvh - var(--header-height));
+        min-width: 0;
+        max-width: 100%;
+        padding-block: clamp(2rem, 4dvh, 3rem);
+        padding-block-start: clamp(3rem, 6.5dvh, 4rem);
+        padding-block-end: 7.8125rem;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: minmax(0, 1fr);
+        align-items: stretch;
+    }
+    .hero__content, .hero__summary { display: contents; }
+    .hero__grid {
+        width: 100%;
+        max-width: 100%;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: "intro" "portrait" "role" "lead" "actions";
+        grid-template-rows: auto 1fr auto auto auto;
+        gap: clamp(1.5rem, 3.5dvh, 2.75rem);
+        justify-items: center;
+    }
+    .hero__grid > *, .hero__intro > *, .hero__summary > *,
+    .hero__actions > *, .hero__portrait-frame, .hero__portrait img {
+        min-width: 0;
+        max-width: 100%;
+    }
+    .hero__intro { grid-area: intro; width: 100%; text-align: center; }
+    .hero__title { font-size: clamp(4rem, 9vw, 5.75rem); }
+    .hero__portrait {
+        grid-area: portrait;
+        align-self: center;
+        width: clamp(17rem, 40vw, 23rem);
+        max-width: 100%;
+        margin-inline: auto;
+    }
+    .hero__portrait-frame { width: 100%; grid-template-columns: minmax(0, 1fr); border-radius: 16px; }
+    .hero__role {
+        grid-area: role;
+        width: 100%;
+        max-width: 34rem;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .hero__lead {
+        grid-area: lead;
+        width: 100%;
+        max-width: 30rem;
+        margin: 0 auto;
+    }
+    .hero__actions {
+        grid-area: actions;
+        width: 100%;
+        max-width: 30rem;
+        margin: 0.75rem auto 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: clamp(0.75rem, 1.5vw, 1rem);
+        overflow-wrap: anywhere;
+    }
+    .hero__actions .button {
+        min-height: 3.125rem;
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9375rem;
+        box-shadow: 0 3px 8px rgba(24, 39, 34, 0.14), 0 10px 28px rgba(24, 39, 34, 0.14);
+        transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease, box-shadow 200ms ease;
+    }
+    .hero__actions .button:hover {
+        box-shadow: 0 6px 16px rgba(24, 39, 34, 0.18), 0 20px 44px rgba(40, 101, 79, 0.34);
+    }
+    .hero__actions .button--primary:hover { background: var(--accent); border-color: var(--accent); }
+    .hero__actions .button--secondary:hover { background: var(--accent); border-color: var(--accent); color: #f7faf8; }
+
+    /* Scroll padding on html owns the header offset; do not add it twice. */
+    #work {
+        scroll-margin-top: 0;
+        min-block-size: calc(100dvh - var(--header-height));
+        padding-block: clamp(1.5rem, 2.5dvh, 2rem);
+        display: flex;
+        align-items: center;
+    }
+    #work .section-heading { margin-block-end: 1.5rem; }
+    #work .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.25rem, 2.5vw, 1.75rem); }
+    #work .project { min-width: 0; gap: 1.25rem; }
+    #work .project + .project { border-block-start: 0; padding-block-start: 0; }
+    #work .project__visual { order: 0; margin-block-start: 0; }
+    #work .project-poster { min-width: 0; max-width: 100%; padding: 1rem; gap: 0.5rem; }
+    #work .project__content { min-width: 0; max-width: 100%; }
+    #work .project__details { grid-template-columns: minmax(0, 1fr); gap: 0.75rem; }
+    #work .project__actions { gap: 0.75rem; }
+}
+
+/* About on portrait tablets, including the 1024px iPad Pro. */
+@media (min-width: 48rem) and (max-width: 64rem) and (orientation: portrait) {
+    #about {
+        /* html already supplies --header-height via scroll-padding-top. */
+        scroll-margin-top: 0;
+        min-block-size: calc(100dvh - var(--header-height));
+        padding-block: clamp(1.5rem, 2.5dvh, 2rem);
+        display: flex;
+        align-items: center;
+    }
+    #about .container { width: 100%; min-width: 0; max-width: 100%; }
+    #about .section-heading {
+        width: 100%;
+        min-width: 0;
+        max-width: 34rem;
+        margin-inline: auto;
+        margin-block-end: clamp(1.5rem, 3dvh, 2.25rem);
+    }
+    #about .journey-controls:not([hidden]) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-block-end: 1.25rem;
+    }
+    #about .journey-control {
+        min-width: 2.75rem;
+        min-height: 2.75rem;
+        padding: 0.5rem;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--surface);
+        color: var(--ink);
+        cursor: pointer;
+    }
+    #about .journey-control:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+    #about .journey-control:disabled { opacity: 0.45; cursor: default; }
+    #about .journey-position { min-width: 12ch; text-align: center; font: 0.8125rem var(--font-mono); color: var(--muted); }
+    #about .journey-ready {
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+        min-width: 0;
+        max-width: 30rem;
+        margin-inline: auto;
+        text-align: center;
+    }
+    /* Shared cell retains the tallest item's natural height without clipping. */
+    #about .journey-ready .journey__item {
+        grid-area: 1 / 1;
+        min-width: 0;
+        max-width: 100%;
+        visibility: hidden;
+    }
+    #about .journey-ready .journey__item.is-active { visibility: visible; }
+    #about .journey__item--tablet-only { display: block; }
+    #about .journey-ready .journey__year {
+        display: grid;
+        place-items: center;
+        width: clamp(5.5rem, 10.5vw, 6.5rem);
+        aspect-ratio: 1;
+        margin: 0 auto 1.5rem;
+        border: 1px solid var(--accent);
+        border-radius: 0.7rem;
+        background: var(--surface);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+    }
 }
