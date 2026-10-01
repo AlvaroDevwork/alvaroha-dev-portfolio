@@ -3,8 +3,8 @@
 ## Descripción
 
 Portafolio oficial de AlvaroDevwork, presentado como **Alvaro H. A.** La versión
-v0.3.0 reúne trayectoria de aprendizaje, tecnologías, proyectos, proceso de
-desarrollo y contacto en una interfaz adaptable a escritorio y dispositivos móviles.
+v0.4.0 consolida una arquitectura responsive mobile-first para teléfonos, iPhone,
+tablets e iPad, con composiciones específicas por viewport.
 
 Repositorio: https://github.com/AlvaroDevwork/alvaroha-dev-portfolio
 
@@ -24,6 +24,17 @@ navegación. Los recursos visuales se encuentran en `assets/`.
 
 La navegación incluye controles accesibles, estados de foco y adaptación móvil.
 Los estilos contemplan la preferencia de movimiento reducido.
+
+## v0.4.0
+
+- Arquitectura responsive mobile-first validada en teléfonos e iPhone.
+- Composiciones específicas para tablets e iPad, incluida la portada responsive.
+- Menú hamburguesa compacto con navegación accesible y preservación del foco.
+- Sección Sobre mí con navegación por etapas, mostrando un año a la vez en iPad.
+- Proyectos, Flujo de trabajo y Contacto ajustados para una composición responsive.
+- QA local completado antes de la integración GitFlow.
+- Flujo de integración: `feature/*` → `develop` → `main` mediante merges normales.
+- El despliegue continúa activándose exclusivamente mediante una etiqueta `v*`.
 
 ## Desarrollo local
 
@@ -73,7 +84,7 @@ administra en los ajustes de Pages, sin un archivo CNAME en el repositorio.
 
 ## Versionado
 
-Versión de referencia: **v0.3.0**.
+Versión de referencia: **v0.4.0**.
 
 Los cambios se integran mediante pull requests desde `feature/*` hacia `develop`
 y después hacia `main`, conservando los commits mediante merge normal.
