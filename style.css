@@ -201,7 +201,6 @@ header.site-header.nav-ready .nav-toggle { display: block; }
 /* Journey and focus use content-sized rows, without decorative timeline rails. */
 .journey { display: grid; gap: 1.5rem; }
 .journey__item { border-top: 1px solid var(--border); padding-top: 1.25rem; }
-.journey__item--tablet-only { display: none; }
 .journey__year { margin-bottom: 0.75rem; color: var(--accent); font: 500 1.25rem var(--font-mono); }
 .status-label { display: inline-block; margin-bottom: 0.5rem; }
 .journey__content p { margin-top: 0.75rem; color: var(--muted); max-width: 65ch; }
