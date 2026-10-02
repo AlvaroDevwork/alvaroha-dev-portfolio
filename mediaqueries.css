@@ -137,15 +137,25 @@
     }
 
     /* About: journey carousel (one year at a time). */
-    #about { display: block; }
+    #about {
+        display: flex;
+        align-items: center;
+    }
     #about .container { min-width: 0; max-width: 100%; }
-    #about .section-heading { margin-block-end: clamp(1rem, 2.5svh, 1.75rem); }
+    #about .section-heading {
+        margin-block-end: clamp(0.75rem, 2svh, 1.25rem);
+    }
+    #about .section-heading > p:last-child {
+        margin-top: 0.5rem;
+        font-size: 0.875rem;
+        line-height: 1.45;
+    }
     #about .journey-controls:not([hidden]) {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 0.9rem;
-        margin-block-end: 1rem;
+        gap: 0.75rem;
+        margin-block-end: 0.75rem;
     }
     #about .journey-control {
         min-width: 2.5rem;
@@ -161,7 +171,9 @@
     #about .journey-control:disabled { opacity: 0.45; cursor: default; }
     #about .journey-position { min-width: 11ch; text-align: center; font: 0.8125rem var(--font-mono); color: var(--muted); }
     #about .journey-ready {
+        position: relative;
         grid-template-columns: minmax(0, 1fr);
+        display: block;
         width: 100%;
         min-width: 0;
         max-width: 30rem;
@@ -169,15 +181,23 @@
         text-align: center;
     }
     #about .journey-ready .journey__item {
-        grid-area: 1 / 1;
+        position: absolute;
+        inset: 0;
         min-width: 0;
         max-width: 100%;
         visibility: hidden;
     }
-    #about .journey-ready .journey__item.is-active { visibility: visible; }
-    #about .journey__item { padding-top: 1rem; }
-    #about .journey__year { margin-bottom: 0.5rem; }
-    #about .journey__content p { margin-top: 0.5rem; font-size: 0.9375rem; }
+    #about .journey-ready .journey__item.is-active {
+        position: relative;
+        visibility: visible;
+    }
+    #about .journey__item { padding-top: 0.75rem; }
+    #about .journey__content h3 { font-size: 1.05rem; line-height: 1.3; }
+    #about .journey__content p {
+        margin-top: 0.4rem;
+        font-size: 0.875rem;
+        line-height: 1.45;
+    }
 
     /* Focus: compact two-column grid. */
     #focus .focus-grid {
@@ -385,7 +405,7 @@
     .hero__grid { grid-template-columns: minmax(0, 1fr) 17rem; gap: 2rem; }
     .hero__portrait { width: 17rem; }
     .hero__title { font-size: clamp(2.7rem, 5vw, 4.5rem); }
-    .journey { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+    .journey { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem; }
 }
 
 @media (min-width: 64rem) {
@@ -403,6 +423,41 @@
     #work .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); align-items: stretch; }
     #work .project + .project { border-top: 0; padding-top: 0; }
     .workflow { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Laptop About: keep the complete journey within a short landscape viewport. */
+@media (min-width: 64rem) and (max-height: 55rem) {
+    #about {
+        min-block-size: calc(100svh - var(--header-height));
+        padding-block: clamp(2rem, 5vh, 3.25rem);
+        display: flex;
+        align-items: center;
+    }
+    #about .section-heading {
+        max-width: 42rem;
+        margin-block-end: clamp(1rem, 2.5vh, 1.5rem);
+    }
+    #about .section-heading > p:last-child {
+        max-width: 58ch;
+        margin-top: 0.65rem;
+        font-size: 0.9375rem;
+        line-height: 1.5;
+    }
+    #about .journey {
+        gap: clamp(1rem, 2vw, 1.75rem);
+    }
+    #about .journey__item {
+        padding-top: 0.85rem;
+    }
+    #about .journey__content h3 {
+        font-size: clamp(1rem, 1.1vw, 1.2rem);
+        line-height: 1.3;
+    }
+    #about .journey__content p {
+        margin-top: 0.5rem;
+        font-size: 0.8125rem;
+        line-height: 1.45;
+    }
 }
 
 /* Portrait tablets: independent screen compositions, with natural growth. */
@@ -593,7 +648,6 @@
         visibility: hidden;
     }
     #about .journey-ready .journey__item.is-active { visibility: visible; }
-    #about .journey__item--tablet-only { display: block; }
     #about .journey-ready .journey__year {
         display: grid;
         place-items: center;
