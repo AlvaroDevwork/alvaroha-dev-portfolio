@@ -3,7 +3,7 @@
 ## Descripción
 
 Portafolio oficial de AlvaroDevwork, presentado como **Alvaro H. A.** La versión
-v0.4.0 consolida una arquitectura responsive mobile-first para teléfonos, iPhone,
+v0.4.1 consolida una arquitectura responsive mobile-first para teléfonos, iPhone,
 tablets e iPad, con composiciones específicas por viewport.
 
 Repositorio: https://github.com/AlvaroDevwork/alvaroha-dev-portfolio
@@ -25,8 +25,12 @@ navegación. Los recursos visuales se encuentran en `assets/`.
 La navegación incluye controles accesibles, estados de foco y adaptación móvil.
 Los estilos contemplan la preferencia de movimiento reducido.
 
-## v0.4.0
+## v0.4.1
 
+- La trayectoria de Sobre mí incorpora la etapa formal de 2024 y su experiencia
+  con virtualización y modelado básico de bases de datos.
+- La nueva etapa se integra en las presentaciones de escritorio, móviles, tablets
+  e iPad.
 - Arquitectura responsive mobile-first validada en teléfonos e iPhone.
 - Composiciones específicas para tablets e iPad, incluida la portada responsive.
 - Menú hamburguesa compacto con navegación accesible y preservación del foco.
@@ -84,7 +88,7 @@ administra en los ajustes de Pages, sin un archivo CNAME en el repositorio.
 
 ## Versionado
 
-Versión de referencia: **v0.4.0**.
+Versión de referencia: **v0.4.1**.
 
 Los cambios se integran mediante pull requests desde `feature/*` hacia `develop`
 y después hacia `main`, conservando los commits mediante merge normal.
