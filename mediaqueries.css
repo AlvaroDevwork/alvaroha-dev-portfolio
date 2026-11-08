@@ -468,8 +468,6 @@
         --footer-copy-size: 0.8125rem;
         --footer-copy-leading: 1.65;
         --footer-block-padding: 1.5rem;
-        /* Existing footer copy occupies two lines at these content widths. */
-        --tablet-footer-space: calc(2 * var(--footer-copy-size) * var(--footer-copy-leading) + 2 * var(--footer-block-padding));
     }
 
     #top, #about, #focus, #work, #workflow, #contact {
@@ -494,7 +492,6 @@
     #work .project { gap: 1.25rem; }
     .workflow { gap: 0.75rem 1.5rem; }
 
-    #contact { min-block-size: calc(var(--tablet-screen) - var(--tablet-footer-space)); }
     .site-footer { padding-block: var(--footer-block-padding); }
     .site-footer p { font-size: var(--footer-copy-size); line-height: var(--footer-copy-leading); }
 }
