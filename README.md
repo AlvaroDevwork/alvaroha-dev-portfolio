@@ -3,7 +3,7 @@
 ## Descripción
 
 Portafolio oficial de AlvaroDevwork, presentado como **Álvaro H. A.**
-Versión de referencia: v0.4.2
+Versión de referencia: v0.4.3
 La versión v0.4.1 consolida una arquitectura responsive mobile-first para teléfonos, iPhone,
 tablets e iPad, con composiciones específicas por viewport.
 
@@ -25,6 +25,11 @@ navegación. Los recursos visuales se encuentran en `assets/`.
 
 La navegación incluye controles accesibles, estados de foco y adaptación móvil.
 Los estilos contemplan la preferencia de movimiento reducido.
+
+## v0.4.3
+
+- La sección Contacto dispone de un viewport independiente en teléfonos, tablets y escritorio.
+- El cambio no modifica la estructura, la navegación ni el comportamiento del portafolio.
 
 ## v0.4.2
 
